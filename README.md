@@ -1,2 +1,2 @@
 # Master-Builder
-RESTful API created by Node and Express utilizing MySQL and Sequelize ORM for the database
+RESTful API created with Node and Express utilizing MySQL and Sequelize ORM for the database
