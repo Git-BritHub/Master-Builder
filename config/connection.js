@@ -3,6 +3,8 @@ require('dotenv').config();
 
 let sequelize;
 
+// await sequelize.sync({ force: true });
+
 if (process.env.JAWSDB_URL) {
     sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
