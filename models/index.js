@@ -1,34 +1,60 @@
 const User = require('./User');
-const Collection = require('./Collection');
+// const Collection = require('./Collection');
 const Labels = require('./Labels');
 const Sets = require('./Sets');
 const Wishlist = require('./Wishlist');
+// for future Development
+// User.hasMany(Collection, {
+//   foreignKey: 'user_id',
+//   onDelete: 'CASCADE'
+// });
 
-User.hasMany(Collection, {
+Sets.belongsTo(User, {
   foreignKey: 'user_id',
-  onDelete: 'CASCADE'
-});
-
-Project.belongsTo(User, {
-  foreignKey: 'user_id'
-});
-
-Labels.hasMany(Sets, {
-    onDelete: 'CASCADE',
 });
 
 Sets.belongsTo(Labels, {
-    foreignKey: 'label_id',
+  foreignKey: 'label_id',
+});
+
+Labels.belongsTo(User, {
+  foreignKey: 'user_id',
+});
+
+Wishlist.belongsTo(User, {
+  foreignKey: 'user_id',
+});
+
+Labels.hasMany(Sets, {
+  foreignKey: 'set_id',
+  onDelete: 'CASCADE',
 });
 
 Wishlist.hasMany(Labels, {
-    foreignKey: 'label_id',
-    onDelete: 'CASCADE',
+  foreignKey: 'label_id',
+  onDelete: 'CASCADE',
 });
 
 Wishlist.hasMany(Sets, {
-    foreignKey: 'set_id',
-    onDelete: 'CASCADE',
+  foreignKey: 'set_id',
+  onDelete: 'CASCADE',
 });
 
-module.exports = { Labels, Sets, Wishlist, User, Collection };
+User.hasMany(Sets, {
+  foreignKey: 'set_id',
+  onDelete: 'CASCADE',
+});
+
+User.hasMany(Labels, {
+  foreignKey: 'label_id',
+  onDelete: 'CASCADE',
+});
+
+User.hasOne(Wishlist, {
+  foreignKey: 'wishlist_id',
+  onDelete: 'CASCADE',
+});
+
+
+// module.exports = { Labels, Sets, Wishlist, User, Collection };
+module.exports = { Labels, Sets, Wishlist, User };
