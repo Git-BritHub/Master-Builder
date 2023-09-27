@@ -1,8 +1,8 @@
 const User = require('./User');
 const Collection = require('./Collection');
-const Labels = require('./labels');
-const Sets = require('./sets');
-const Wishlist = require('./wishlist');
+const Labels = require('./Labels');
+const Sets = require('./Sets');
+const Wishlist = require('./Wishlist');
 
 User.hasMany(Collection, {
   foreignKey: 'user_id',
