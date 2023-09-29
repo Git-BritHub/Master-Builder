@@ -1,26 +1,26 @@
 const router = require('express').Router();
 // TODO: 'Collection' in place of project
-const { Collection, User } = require('../models');
-const withAuth = require('../utils/auth');
+const { User } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
     // Get all Collection and JOIN with user data
-    const collectionData = await Project.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    });
+    // const collectionData = await Collection.findAll({
+    //   include: [
+    //     {
+    //       model: User,
+    //       attributes: ['name'],
+    //     },
+    //   ],
+    // });
 
     // Serialize data so the template can read it
-    const collection = collectionData.map((collection) => collection.get({ plain: true }));
+    // const collection = collectionData.map((collection) => collection.get({ plain: true }));
 
     // Pass serialized data and session flag into template
     res.render('homepage', { 
-      collection, 
+      // collection, 
       logged_in: req.session.logged_in 
     });
   } catch (err) {
@@ -28,27 +28,27 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/collection/:id', async (req, res) => {
-  try {
-    const collectionData = await Collection.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    });
+// router.get('/collection/:id', async (req, res) => {
+//   try {
+//     const collectionData = await Collection.findByPk(req.params.id, {
+//       include: [
+//         {
+//           model: User,
+//           attributes: ['name'],
+//         },
+//       ],
+//     });
 
-    const collection = collectionData.get({ plain: true });
+//     const collection = collectionData.get({ plain: true });
 
-    res.render('collection', {
-      ...collection,
-      logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+//     res.render('collection', {
+//       ...collection,
+//       logged_in: req.session.logged_in
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {

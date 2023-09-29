@@ -15,7 +15,15 @@ Labels.init(
         label_name: {
             allowNull: false,
             type: DataTypes.STRING
-        }
+        },
+        user_id: {
+            allowNull: false,
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id',
+            },
+        },
     },
     {
         sequelize,

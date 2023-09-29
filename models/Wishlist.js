@@ -35,6 +35,14 @@ Wishlist.init(
                 key: 'set_id',
             },
         },
+        user_id: {
+            allowNull: false,
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id',
+            },
+        },
     },
     {
         sequelize,
