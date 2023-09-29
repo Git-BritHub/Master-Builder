@@ -1,7 +1,7 @@
 const router = require('express').Router();
 // TODO: 'Collection' in place of project
-const { User } = require('../../models');
-const withAuth = require('../../utils/auth');
+const { User } = require('../models');
+const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
