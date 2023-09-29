@@ -5,9 +5,9 @@ let sequelize;
 
 // await sequelize.sync({ force: true });
 
-if (process.env.JAWSDB_URL) {
-    // JAWSDB_URL for Heroku and a different one for railway
-    sequelize = new Sequelize(process.env.JAWSDB_URL);
+if (process.env.MYSQL_URL) {
+    // MYSQL_URL for railway database connection
+    sequelize = new Sequelize(process.env.MYSQL_URL);
 } else {
     sequelize = new Sequelize(
         process.env.DB_NAME,
