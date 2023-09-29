@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Montserrat:wght@200;400;900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.logo {
+  display: flex;
+  object-fit: cover;
+}
+
+.background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(90deg, #d2001a, #7462ff, #f48e21, #23d5ab);
+  background-size: 300% 300%;
+  animation: color 12s ease-in-out infinite;
+}
+
+@keyframes color {
+  0%{
+    background-position: 0 50%;
+  }
+  50%{
+    background-position: 100% 50%;
+  }
+  100%{
+    background-position: 0 50%;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  max-width: 850px;
+  width: 100%;
+  background: #fff;
+  Padding: 40px 30px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  perspective: 2700px;
+}
+
+.container .cover {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 50%;
+  z-index: 98;
+  transition: all 1s ease;
+  transform-origin: left;
+  transform-style: preserve-3d;
+}
+
+.container .cover::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #e27005;
+  opacity: 0.8;
+  z-index: 100;
+}
+
+.container #flip:checked ~ .cover {
+  transform: rotateY(-180deg);
+}
+
+.container .cover img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: 12;
+  backface-visibility: hidden;
+}
+
+.container .cover .text {
+  position: absolute;
+  z-index: 111;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cover .text .text-1,
+.cover .text .text-2 {
+  font-size: 26px;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: center;
+  backface-visibility: hidden;
+}
+
+.cover .text .text-2 {
+  font-size: 15px;
+  font-weight: 400px;
+}
+
+.container .form {
+  height: 100%;
+  width: 100%;
+  background: #fff;
+}
+
+.container .form-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-content .login-form,
+.form-content .signup-form {
+  width: calc(100% / 2 - 25px);
+  /* background: red; */
+}
+
+form .form-content .title {
+  position: relative;
+  font-size: 24px;
+  font-weight: 900;
+  color: #9904fc;
+  }
+
+form .form-content .title:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 25px;
+  background: #9904fc;
+}
+
+form .signup-form .title:before {
+  width: 20px;
+}
+
+form .form-content .input-boxes {
+  margin-top: 30px;
+}
+
+form .form-content .input-box {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  margin: 10px 0;
+  position: relative;
+}
+
+form .form-content .input-box input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 0 30px;
+  font-size: 16px;
+  font-weight: 500;
+  border-bottom: 2px solid rgba(0,0,0,0.2);
+}
+
+.form-content .input-box input:focus 
+.form-content .input-box input:valid {
+  border-color: #9904fc;
+}
+
+.form-content .input-box i {
+  position: absolute;
+  color: #9904fc;
+  font-size: 17px;
+}
+
+form .form-content .text {
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+}
+
+form .form-content .text a {
+  text-decoration: none;
+}
+
+form .form-content .text a:hover {
+  text-decoration: underline;
+}
+
+form .form-content .button {
+  color: #fff;
+  margin-top: 40px;
+}
+
+form .form-content .button input {
+  color: #fff;
+  background: #9904fc;
+  border-radius: 6px;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+form .form-content .button input:hover {
+  background: #9904fc;
+}
+
+form .form-content label {
+  color: #9904fc;
+  cursor: pointer;
+}
+
+form .form-content label:hover {
+  text-decoration: underline;
+}
