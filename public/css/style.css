@@ -66,8 +66,7 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  background: #e27005;
-  opacity: 0.8;
+  opacity: 0.5;
   z-index: 100;
 }
 
@@ -81,32 +80,6 @@
   width: 100%;
   object-fit: cover;
   z-index: 12;
-  backface-visibility: hidden;
-}
-
-.container .cover .text {
-  position: absolute;
-  z-index: 111;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.cover .text .text-1,
-.cover .text .text-2 {
-  font-size: 26px;
-  font-weight: 600;
-  color: #ffffff;
-  text-align: center;
-  backface-visibility: hidden;
-}
-
-.cover .text .text-2 {
-  font-size: 15px;
-  font-weight: 400px;
 }
 
 .container .form {
@@ -222,6 +195,14 @@ form .form-content label {
 
 form .form-content label:hover {
   text-decoration: underline;
+}
+form .form-content .login-text,
+form .form-content .sign-up-text {
+  text-align: center;
+  margin-top: 25px;
+}
+.container #flip {
+  display: none;
 }
 
 /* Navbar CSS */
