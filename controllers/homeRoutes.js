@@ -79,4 +79,8 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.get('/catalogue', (req, res) => {
+  res.render('catalogue');
+});
+
 module.exports = router;
