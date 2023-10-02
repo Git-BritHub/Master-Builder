@@ -224,6 +224,22 @@ form .form-content label:hover {
   text-decoration: underline;
 }
 
+/* Navbar CSS */
+
+.nav-item {
+  font-weight: 900;
+}
+
+.nav-item .nav-link {
+  color: #FC0404;
+}
+.wishlist-navbar-brand {
+  font-weight: 900;
+  color:#FC0404;
+}
+
+/* Homepage CSS */
+
 body {
   background-image: url('../images/home\ back\ ground.jpg');
   background-position: center;
@@ -332,18 +348,6 @@ footer{
 }
 
 /* CSS for the wishlist below */
-
-.nav-item {
-  font-weight: 900;
-}
-
-.nav-item .nav-link {
-  color: #000;
-}
-.wishlist-navbar-brand {
-  font-weight: 900;
-  color:#FC0404;
-}
 .wishlist-header .wishlist-title {
   display: flex;
   justify-content: center;
