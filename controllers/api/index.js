@@ -6,5 +6,4 @@ const userRoutes = require('./userRoutes');
 router.use('/users', userRoutes);
 // TODO: router.use for js file that we still need to name
 
-
 module.exports = router;
