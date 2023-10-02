@@ -330,3 +330,91 @@ footer{
   background-color: white;
 
 }
+
+/* CSS for the wishlist below */
+
+.nav-item {
+  font-weight: 900;
+}
+
+.nav-item .nav-link {
+  color: #000;
+}
+.wishlist-navbar-brand {
+  font-weight: 900;
+  color:#FC0404;
+}
+.wishlist-header .wishlist-title {
+  display: flex;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 24px;
+  color: #000;
+}
+.wishlist-header .wishlist-heart {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+.wishlist-table {
+  width: 100%;
+}
+.wishlist-table-hdr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f7f7f7;
+}
+.wishlist-table-hdr p {
+  font-weight: 900;
+  font-size: 18px;
+  color: #000;
+}
+button {
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.wishlist-add_new {
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #FC0404;
+}
+.wishlist-add_new:hover {
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #740000;
+}
+input {
+  padding: 10px 20px;
+  margin: 0 10px;
+  outline: none;
+  border: 1px solid #FC0404;
+  border-radius: 6px;
+}
+.wishlist-table_section{
+  height: 650px;
+  overflow: auto;
+}
+table {
+  width: 100%;
+  table-layout:fixed;
+}
+td img {
+  height: 125px;
+  width: 125px;
+}
+.page-item .page-link {
+  color:#FC0404;
+  font-weight: 400;
+}
+.page-item .page-link:hover {
+  font-weight: 400;
+  background-color:#FC0404;
+  color: #fff
+}
+::placeholder{
+  color: #000;
+}
