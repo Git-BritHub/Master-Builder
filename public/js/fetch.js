@@ -7,7 +7,7 @@
 
 // Fetch call for categories/labels to pull up 10 sets at a time per page
 const fetchLabels = () => {
-  fetch(`https://rebrickable.com/https://rebrickable.com/api/v3/lego/themes/?page_size=10/?key=${process.env.API_KEY}`)
+  fetch(`https://rebrickable.com/api/v3/lego/themes/?page_size=10&key=${process.env.API_KEY}`)
     .then((res) => {
       return res.json()
     })
@@ -15,11 +15,12 @@ const fetchLabels = () => {
       console.log(data)
     })
 }
+
 fetchLabels();
 
 // Fetch call for sets to pull 10 sets at a time per page
 const fetchSets = () => {
-  fetch(`https://rebrickable.com/api/v3/lego/sets/?page_size=10/?key=${process.env.API_KEY}`)
+  fetch(`https://rebrickable.com/api/v3/lego/sets/?page_size=10&key=${process.env.API_KEY}`)
     .then((res) => {
       return res.json()
     })
@@ -27,6 +28,7 @@ const fetchSets = () => {
       console.log(data)
     })
 }
+
 fetchSets();
 
 // Fetch call to add set to user wishlist
@@ -39,6 +41,7 @@ const addSet = () => {
     console.log(data)
   })
 }
+
 addSet();
 
 // Fetch call to delete set from user wishlist
@@ -51,6 +54,7 @@ const deleteSet = () => {
     console.log(data)
   })
 }
+
 deleteSet();
 
 // TODO: Write function to browse by label/category, followed by option to browse by sets within chosen label/category -- use fetchLabels() and fetchSets
