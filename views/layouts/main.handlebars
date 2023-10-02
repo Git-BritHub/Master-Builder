@@ -22,34 +22,34 @@
       <div class="container-fluid">
         {{!-- TODO: add framework in header class --}}
         <h2 class="wishlist-navbar-brand">
-          <img src="../../public/images/Lego_Heart.png" alt="Logo" width="40" height="40"
-            class="d-inline-block align-text-top" />
+          <img src="images/Lego_Heart.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-top" />
           masterBuilder
         </h2>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="nav justify-content-end">
+            <!-- Conditionally render links for login or logout, wishlist, collection and profile -->
+            {{#if logged_in}}|
             <li class="nav-item">
-              <a class="nav-link" href="#">Home</a>
+              <a class="nav-link" href="/wishlist">Wishlist</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Wishlist</a>
+              <a class="nav-link" href="/collection">Collection</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Collection</a>
+              <a class="nav-link" href="/profile">Profile</a>
+            </li>
+            <button class="no-button" id="logout">Logout</button>
+            {{else}}
+            <li class="nav-item">
+              <a class="nav-link" href="/login">Login</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Profile</a>
+              <a class="nav-link" href="/catalogue">LEGO Catalogue</a>
             </li>
+            {{/if}}
           </ul>
         </div>
       </div>
-      <!-- Conditionally render login or logout links -->
-      {{#if logged_in}}
-      <a href="/profile">profile</a> |
-      <button class="no-button" id="logout">logout</button>
-      {{else}}
-      <a href="/login">login</a>
-      {{/if}}
     </nav>
   </header>
   {{!-- TODO: add framework for main class --}}
@@ -66,7 +66,6 @@
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
-  <script src="/js/fetch.js"></script>
 </body>
 
 </html>
