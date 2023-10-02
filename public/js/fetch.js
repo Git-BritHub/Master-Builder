@@ -4,10 +4,11 @@
 // TODO: user name attached to login session:
 // const user_token = 
 
+const apiKey = "37b9ea2e840c79115b092a171903cf53"
 
 // Fetch call for categories/labels to pull up 10 sets at a time per page
 const fetchLabels = () => {
-  fetch(`https://rebrickable.com/api/v3/lego/themes/?page_size=10&key=${process.env.API_KEY}`)
+  fetch(`https://rebrickable.com/api/v3/lego/themes/?page_size=10&key=${apiKey}`)
     .then((res) => {
       return res.json()
     })
