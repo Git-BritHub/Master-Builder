@@ -597,3 +597,89 @@ footer ul li {
   display: inline;
   margin: 0 15px;
 }
+
+/* Catalog CSS */
+
+.catalog-header {
+  background-color: #FC0404;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.catalog-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.catalog-main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.catalog-filter {
+  margin-bottom: 20px;
+}
+
+.catalog-filter-label {
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.theme-select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.results {
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.results div {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.set {
+  width: calc(33.33% - 20px); /* Set the width for each set with spacing */
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.set img {
+  max-width: 100%; /* Ensure all images are the same width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.add-to-collection,
+.add-to-wishlist {
+  display: block;
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #FC0404;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-to-collection:hover,
+.add-to-wishlist:hover {
+  background-color: #D90202;
+}
