@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+// Handles creation of an account and login once user selects submit
 router.post('/', async (req, res) => {
   console.log("$$$$$$$$")
   console.log(req.body)
@@ -23,25 +24,28 @@ router.post('/', async (req, res) => {
   }
 });
 
+// Handles login
 router.post('/login', async (req, res) => {
   try {
-    const userData = await User.findOne({ where: { email: req.body.email } });
+    const userData = await User.findOne({
+      where: { username: req.body.username }
+    });
 
     if (!userData) {
       res
         .status(400)
         //   TODO: come up with fun lego themed message for login failure
-        .json({ message: 'Incorrect email or password, please try again' });
+        .json({ message: 'Incorrect password, please try again' });
       return;
     }
 
-    const validPassword = await userData.checkPassword(req.body.password);
+    const validPassword = await userData.validatePassword(req.body.password);
 
     if (!validPassword) {
       res
         .status(400)
         //   TODO: come up with fun lego themed message for login failure
-        .json({ message: 'Incorrect email or password, please try again' });
+        .json({ message: 'Incorrect username or password, please try again' });
       return;
     }
 
@@ -58,6 +62,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
+// Handles logout
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
