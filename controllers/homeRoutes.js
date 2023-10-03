@@ -84,4 +84,12 @@ router.get('/catalogue', (req, res) => {
   res.render('catalogue');
 });
 
+router.get('/collection', (req, res) => {
+  res.render('collection');
+});
+
+router.get('/wishlist', (req, res) => {
+  res.render('wishlist');
+});
+
 module.exports = router;
