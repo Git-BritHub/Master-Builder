@@ -1,3 +1,8 @@
+require('dotenv').config({path:__dirname+'/./../../.env'});
+
+// Other imports and code
+
+
 // TODO: Create variables to be used in fetch calls:
 // TODO: set id number to delete:
 // const list_id = 
@@ -5,10 +10,10 @@
 // const user_token = 
 
 const apiKey = "37b9ea2e840c79115b092a171903cf53"
-
+console.log(process.env.API_KEY)
 // Fetch call for categories/labels to pull up 10 sets at a time per page
 const fetchLabels = () => {
-  fetch(`https://rebrickable.com/api/v3/lego/themes/?page_size=10&key=${apiKey}`)
+  fetch(`https://rebrickable.com/api/v3/lego/themes/?page_size=10&key=${process.env.API_KEY}`)
     .then((res) => {
       return res.json()
     })
