@@ -4,12 +4,15 @@
         <h1>Builder Profile</h1>
       </header>
       <section class="profile">
+
         <div class="profile-image">
-          <img src="default-avatar.png" alt="Profile Picture" />
+          <img src="images/Lego_Heart.png" alt="Profile Picture" />
           <input type="file" id="avatar-upload" accept="image/*" />
           <label for="avatar-upload">Upload Avatar</label>
         </div>
         <div class="profile-info">
+          <p>{{info.username}}</p>
+          <p>{{info.email}}</p>
           <label class="username">Username:</label>
           <input type="text" id="username" placeholder="Your Username" />
 

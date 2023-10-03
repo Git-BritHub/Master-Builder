@@ -3,8 +3,7 @@ const { User } = require('../../models');
 
 // Handles creation of an account and login once user selects submit
 router.post('/', async (req, res) => {
-  console.log("$$$$$$$$")
-  console.log(req.body)
+  // console.log(req.body)
   try {
     const userData = await User.create({
         username: req.body.name,
@@ -30,7 +29,6 @@ router.post('/login', async (req, res) => {
     const userData = await User.findOne({
       where: { username: req.body.username }
     });
-
     if (!userData) {
       res
         .status(400)
@@ -38,8 +36,7 @@ router.post('/login', async (req, res) => {
         .json({ message: 'Incorrect password, please try again' });
       return;
     }
-
-    const validPassword = await userData.validatePassword(req.body.password);
+    const validPassword = userData.checkPassword(req.body.password);
 
     if (!validPassword) {
       res
@@ -51,6 +48,7 @@ router.post('/login', async (req, res) => {
 
     req.session.save(() => {
       req.session.user_id = userData.id;
+      req.session.email = userData.email;
       req.session.logged_in = true;
       
     //   TODO: come up with fun lego themed message for login success
