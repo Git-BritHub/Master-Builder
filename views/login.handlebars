@@ -1,107 +1,64 @@
-{{!-- TODO: edit link and button names --}}
-{{!-- <div class="row">
-  <div class="col-md-6">
-    <h2>Login</h2>
-
-    <form class="form login-form">
-      <div class="form-group">
-        <label for="email-login">email:</label>
-        <input class="form-input" type="text" id="email-login" />
-      </div>
-      <div class="form-group">
-        <label for="password-login">password:</label>
-        <input class="form-input" type="password" id="password-login" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
-      </div>
-    </form>
-  </div>
-  <div class="col-md-6">
-    <h2>Signup</h2>
-
-    <form class="form signup-form">
-      <div class="form-group">
-        <label for="name-signup">name:</label>
-        <input class="form-input" type="text" id="name-signup" />
-      </div>
-      <div class="form-group">
-        <label for="email-signup">email:</label>
-        <input class="form-input" type="text" id="email-signup" />
-      </div>
-      <div class="form-group">
-        <label for="password-signup">password:</label>
-        <input class="form-input" type="password" id="password-signup" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">signup</button>
-      </div>
-    </form>
-  </div>
-</div> --}}
-
-  <div class="background">
-    <div class="container">
-      <div class="logo">
-        <img src="images/MasterBuilder-logo2-r2.png" alt="Master Builder Logo" />
-      </div>
-      <input type="checkbox" id="flip">
-      <div class="cover">
-        <div class="front">
-          <img src="images/flat-lay-interlocking-toy-blocks-baby-shower (1).jpg" alt="Lego Instructions steps 1 - 10" />
-        </div>
-      </div>
-      <form action="#">
-        <div class="form-content">
-          <div class="login-form">
-            <h1 class="title">Let's Build!</h1>
-            <div class="input-boxes">
-              <div class="input-box">
-                <i class="bi bi-person-fill"></i>
-                <input type="text" placeholder="Username*" id="email-login" />
-              </div>
-              <div class="input-box">
-                <i class="bi bi-lock-fill"></i>
-                <input type="password" placeholder="Password*" id="password-login" />
-              </div>
-              <div class="text"><a href="#">Forgot Password?</a></div>
-              <div class="button input-box">
-                <input type="submit" value="Submit dcsa" id="lfbtn" />
-              </div>
-              <div class="text sign-up-text">
-                Not a Master Builder? <label for="flip"> Sign up now</label>
-              </div>
-            </div>
-          </div>
-          <div class="signup-form" id="signup-form">
-            <h1 class="title">Become a Builder!</h1>
-            <div class="input-boxes">
-              <div class="input-box">
-                <i class="bi bi-person-fill"></i>
-                <input id="name-signup" type="text" placeholder="Create a username*" />
-              </div>
-              <div class="input-box">
-                <i class="bi bi-envelope-at-fill"></i>
-                <input id="email-signup" type="text" placeholder="Enter your email*" />
-              </div>
-              <div class="input-box">
-                <i class="bi bi-lock-fill"></i>
-                <input id="password-signup" type="password" placeholder="Create a password*" />
-              </div>
-              <div class="button input-box">
-                <input type="submit" value="Submit" id="signupbtn" />
-              </div>
-              <div class="text sign-up-text">
-                Already have an account?
-                <label for="flip"> Let's build!</label>
-              </div>
-            </div>
-          </div>
-        </div>
-      </form>
+<div class="background">
+  <div class="container">
+    <div class="logo">
+      <img src="images/MasterBuilder-logo2-r2.png" alt="Master Builder Logo" />
     </div>
+    <input type="checkbox" id="flip">
+    <div class="cover">
+      <div class="front">
+        <img src="images/flat-lay-interlocking-toy-blocks-baby-shower (1).jpg" alt="Lego Instructions steps 1 - 10" />
+      </div>
+    </div>
+    <form action="#">
+      <div class="form-content">
+        <div class="login-form">
+          <h1 class="title">Let's Build!</h1>
+          <div class="input-boxes">
+            <div class="input-box">
+              <i class="bi bi-person-fill"></i>
+              <input type="text" placeholder="Username*" id="email-login" />
+            </div>
+            <div class="input-box">
+              <i class="bi bi-lock-fill"></i>
+              <input type="password" placeholder="Password*" id="password-login" />
+            </div>
+            <div class="text"><a href="#">Forgot Password?</a></div>
+            <div class="button input-box">
+              <input type="submit" value="Submit" id="lfbtn" />
+            </div>
+            <div class="text sign-up-text">
+              Not a Master Builder? <label for="flip"> Sign up now</label>
+            </div>
+          </div>
+        </div>
+        <div class="signup-form" id="signup-form">
+          <h1 class="title">Become a Builder!</h1>
+          <div class="input-boxes">
+            <div class="input-box">
+              <i class="bi bi-person-fill"></i>
+              <input id="name-signup" type="text" placeholder="Create a username*" />
+            </div>
+            <div class="input-box">
+              <i class="bi bi-envelope-at-fill"></i>
+              <input id="email-signup" type="text" placeholder="Enter your email*" />
+            </div>
+            <div class="input-box">
+              <i class="bi bi-lock-fill"></i>
+              <input id="password-signup" type="password" placeholder="Create a password*" />
+            </div>
+            <div class="button input-box">
+              <input type="submit" value="Submit" id="signupbtn" />
+            </div>
+            <div class="text sign-up-text">
+              Already have an account?
+              <label for="flip"> Let's build!</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
-    <script src="/js/login.js"></script>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="/js/login.js"></script>
