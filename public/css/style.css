@@ -23,6 +23,7 @@
   width: 100%;
   background: #fff;
   Padding: 40px 30px;
+  Margin: 30px auto 0px auto;
   box-shadow: 0 5px 10px rgba(0,0,0,0.2);
   perspective: 2700px;
 }
