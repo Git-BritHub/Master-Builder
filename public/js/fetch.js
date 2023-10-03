@@ -13,7 +13,9 @@
 
 const themeSelect = document.getElementById("theme-select");
 const resultsDiv = document.querySelector(".results");
-const apiKey = "37b9ea2e840c79115b092a171903cf53"; // Replace with your API key
+const apiKey = "37b9ea2e840c79115b092a171903cf53";
+const itemsPerPage = 10;
+let currentPage = 1;
 
 // Function to fetch LEGO themes from the API and populate the dropdown
 const fetchLabels = () => {
@@ -58,7 +60,7 @@ const fetchSetDetails = async (setNumber) => {
     }
 };
 
-// Function to fetch LEGO sets from the API and populate the results
+// Function to fetch LEGO sets from the API and populate the results for the current page
 const fetchSets = async () => {
     const selectedThemeId = themeSelect.value;
     resultsDiv.innerHTML = ""; // Clear previous results
@@ -69,22 +71,24 @@ const fetchSets = async () => {
             const data = await response.json();
 
             if (response.ok) {
-                data.results.forEach(async (set) => {
+                const startIndex = (currentPage - 1) * itemsPerPage;
+                const endIndex = startIndex + itemsPerPage;
+                const setsToDisplay = data.results.slice(startIndex, endIndex);
+
+                setsToDisplay.forEach(async (set) => {
+                    // Create a setDiv and set its content as before
                     const setDiv = document.createElement("div");
                     setDiv.classList.add("set");
 
-                    // Call fetchSetDetails to get the image URL
-                    const imageUrl = await fetchSetDetails(set.set_num);
-
                     // Create an image element for the LEGO set
                     const img = document.createElement("img");
-                    img.src = imageUrl || 'URL_TO_DEFAULT_IMAGE'; // Use a default image if URL is not available
+                    img.src = await fetchSetDetails(set.set_num);
                     img.alt = `LEGO Set`;
                     setDiv.appendChild(img);
 
-                    // Create a label with a checkbox for the LEGO set
+                    // Create a label for the LEGO set
                     const label = document.createElement("label");
-                    label.appendChild(document.createTextNode(`${set.set_num} - ${set.name}`));
+                    label.textContent = `${set.set_num} - ${set.name}`;
                     setDiv.appendChild(label);
 
                     // Create buttons to add to collection and wishlist
@@ -108,6 +112,8 @@ const fetchSets = async () => {
 
                     resultsDiv.appendChild(setDiv);
                 });
+
+                updatePaginationInfo(data.results.length);
             } else {
                 console.error("Error fetching sets:", data.detail);
             }
@@ -117,8 +123,38 @@ const fetchSets = async () => {
     }
 };
 
-// Event listener to fetch and display LEGO sets when a theme is selected
-themeSelect.addEventListener("change", fetchSets);
+// Function to update pagination information
+const updatePaginationInfo = (totalSets) => {
+    const totalPages = Math.ceil(totalSets / itemsPerPage);
+    const pageInfo = document.getElementById("page-info");
+    pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+
+    const prevPageButton = document.getElementById("prev-page");
+    const nextPageButton = document.getElementById("next-page");
+
+    prevPageButton.disabled = currentPage === 1;
+    nextPageButton.disabled = currentPage === totalPages;
+
+    prevPageButton.addEventListener("click", () => {
+        if (currentPage > 1) {
+            currentPage--;
+            fetchSets();
+        }
+    });
+
+    nextPageButton.addEventListener("click", () => {
+        if (currentPage < totalPages) {
+            currentPage++;
+            fetchSets();
+        }
+    });
+};
+
+// Event listener to fetch and display LEGO sets when a theme is selected or page is changed
+themeSelect.addEventListener("change", () => {
+    currentPage = 1; // Reset to the first page when the theme is changed
+    fetchSets();
+});
 
 // Call the function to populate the dropdown with LEGO themes
 fetchLabels();
