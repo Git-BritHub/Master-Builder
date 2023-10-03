@@ -411,7 +411,7 @@ td img {
   display: flex;
   width: 200px;
   height: 200px;
-  text-align: center;
+  text-align:center;
   justify-content: center;
   position: relative;
 }
@@ -689,6 +689,7 @@ footer ul li {
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+  margin-bottom: 40px;
 }
 
 .pagination button {

@@ -14,7 +14,7 @@
 const themeSelect = document.getElementById("theme-select");
 const resultsDiv = document.querySelector(".results");
 const apiKey = "37b9ea2e840c79115b092a171903cf53";
-const itemsPerPage = 10;
+const itemsPerPage = 12;
 let currentPage = 1;
 
 // Function to fetch LEGO themes from the API and populate the dropdown
