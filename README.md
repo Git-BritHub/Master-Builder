@@ -1,40 +1,38 @@
 # Master-Builder
-RESTful API created with Node and Express utilizing MySQL and Sequelize ORM for the database
-* Deployed website: https://master-builder-production-40c9.up.railway.app/
-## User Story
-* As someone that loves legos. Introducing masterBuilder, the ultimate destination for LEGO enthusiasts of all ages. With masterBuilder, you can easily explore a vast universe of LEGO sets and pieces, effortlessly discovering the bricks you need to bring your ideas to life. Create your own personalized wishlist, Create your dream LEGO collection, and never miss out on the sets you’ve been waiting for. At masterbuilder you can turn your LEGO aspirations into reality, one brick at a time!
-## Description
-* masterBuilder is a website that allows you to find an extensive catalog of LEGO sets and pieces from a wide range of themes, spanning form classic collections to the latest releases. Whether you’re a fan of space adventures, skyscrapers, or historical wonders, you’ll find it all at masterBuilder.
+Deployed website: https://master-builder-production-40c9.up.railway.app/
 
-* With masterBuilder you can create your profile and show others your collections and Amazing Creations as well as your favorite builds.
+## User Story
+* As a LEGO enthusiast, we wanted to create an app that would allow users to save and collect LEGO sets of their choosing. Introducing: masterBuilder -- the ultimate destination for LEGO enthusiasts of all ages! With masterBuilder, you can easily explore a vast universe of LEGO sets and pieces, effortlessly discovering the bricks you need to bring your ideas to life. Create your own personalized wishlist, dream LEGO collection, and never miss out on the sets you’ve been waiting for. At masterbuilder, you can turn your LEGO aspirations into reality one brick at a time.
+
+## Table of Contents
+* [Description](#description)
+* [Usage](#usage)
+* [License](#license)
+* [Contributing](#contributing)
+
+## Description
+`masterBuilder` allows you to find an extensive catalog of LEGO sets and pieces from a wide range of themes, spanning from classic collections to the latest releases. Whether you’re a fan of space adventures, skyscrapers, or historical wonders, you’ll find it all at `masterBuilder`. With `masterBuilder` you can create your profile and show others your collections and amazing creations, as well as your favorite builds. `masterBuilder` is a RESTful API created with Node and Express utilizing MySQL and Sequelize ORM for the database.
 
 ## Usage
-* Login page: On the Login page we made it so you can Login using your Username and Password and if your don't have a Profile you can create your own profile with some basic Information
+* LEGO Catalogue: An account is not required to browse through the various LEGO themes and sets. Select `LEGO Catalogue` towards the top of the page to browse and find your desired LEGO set. By selecting one of the LEGO themes provided, you will be able to browse and add to your collection or wishlist. 
 
-* Home Page: Upon visiting our website, you'll land on the home page.
+* Login: Select the red `Login` button at the top-left of the page. If you don't yet have a profile, create your new profile by selecting the `Sign up now` link below the login `Submit` button. Fill out the required fields and select `Submit`.
 
-* LEGO Catalog: This is the area that will allow you to search and find what ever lego set you are looking for by entering keywords like set names, themes, or set numbers.
+* Profile: Once you have logged in or have created an account, you will be redirected to your profile page where you will have the option to save an image or picture for your avatar. Feel free to add favorite sets to your collection and wishlist on your profile by browsing the `LEGO Catalogue`. 
 
-## the Goal
-* We wanted to create an app for LEGO enthusiasts of all ages to find, save and collect Lego sets of their choosing. We also wanted to make it so they could create their own Profile where they can save all their sets to show them off to others.
-
-                                                                                  Images of the Website
 ![Alt text](./public/images/Lego%20homepage.PNG)
+
 ![Alt text](./public/images/Login%20page.PNG)
+
 ![Alt text](./public/images/Catalog%20page.PNG)
-## API Links
-* https://rebrickable.com/api/
-
-## Credits
-* Brittany Brimley https://github.com/Git-BritHub
-
-* Tim Morgan https://github.com/tmorgan-dev
-
-* Blake Boiteux https://github.com/Bwainuna
-
-* Josh Peterson https://github.com/joshcode1
 
 ## License
-LICENSE Used
-Figma Project
-https://www.figma.com/file/daD9o
+[![License: MIT](https://img.shields.io/badge/License-MIT-aqua.svg)](https://opensource.org/licenses/MIT)
+
+## Contributing
+* Brittany Brimley https://github.com/Git-BritHub
+* Tim Morgan https://github.com/tmorgan-dev
+* Blake Boiteux https://github.com/Bwainuna
+* Josh Peterson https://github.com/joshcode1
+* masterBuilder Figma Project https://www.figma.com/file/daD9o
+* https://rebrickable.com/api/
