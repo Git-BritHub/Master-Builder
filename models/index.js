@@ -1,13 +1,19 @@
 const User = require('./User');
-// const Collection = require('./Collection');
+const Collection = require('./Collection');
 const Labels = require('./Labels');
 const Sets = require('./Sets');
 const Wishlist = require('./Wishlist');
 // for future Development
-// User.hasMany(Collection, {
-//   foreignKey: 'user_id',
-//   onDelete: 'CASCADE'
-// });
+
+User.hasOne(Collection, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
+});
+
+Collection.belongsTo(User, {
+  foreignKey: "user_id",
+  onDelete: 'CASCADE'
+});
 
 Sets.belongsTo(User, {
   foreignKey: 'user_id',
@@ -56,5 +62,4 @@ User.hasOne(Wishlist, {
 });
 
 
-// module.exports = { Labels, Sets, Wishlist, User, Collection };
-module.exports = { Labels, Sets, Wishlist, User };
+module.exports = { Labels, Sets, Wishlist, User, Collection };

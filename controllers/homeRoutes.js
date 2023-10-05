@@ -1,6 +1,6 @@
 const router = require('express').Router();
 // TODO: 'Collection' in place of project
-const { User } = require('../models');
+const { User, Collection } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
@@ -84,8 +84,29 @@ router.get('/catalogue', (req, res) => {
   res.render('catalogue');
 });
 
-router.get('/collection', (req, res) => {
-  res.render('collection');
+// UPDATE THIS TO SHOW EACH USERS COLLECTION INSTEAD OF ALL COLLECTIONS
+router.get('/collection', async (req, res) => {
+  try {
+         const collectionData = await Collection.findAll({
+       include: [
+         {
+           model: User,
+           attributes: ['username'],
+         },
+       ],
+     });
+
+     const collection = collectionData.map((collection) => collection.get({ plain: true }));
+
+
+
+    res.render('collection', {
+      collection
+    });
+  } catch(err) {
+    console.log(err)
+    res.status(500).json(err)
+  }
 });
 
 router.get('/wishlist', (req, res) => {

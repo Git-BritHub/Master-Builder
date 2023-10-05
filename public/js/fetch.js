@@ -47,6 +47,7 @@ const fetchSetDetails = async (setNumber) => {
         const data = await response.json();
 
         if (response.ok) {
+            console.log(data)
             // Extract the image URL from the response data
             const imageUrl = data.set_img_url;
             return imageUrl;
@@ -95,9 +96,22 @@ const fetchSets = async () => {
                     const addToCollectionBtn = document.createElement("button");
                     addToCollectionBtn.classList.add("add-to-collection");
                     addToCollectionBtn.textContent = "Add to Collection";
-                    addToCollectionBtn.addEventListener("click", () => {
-                        // Add set to collection logic here
-                        // You can use the set.set_num to identify the set
+                    addToCollectionBtn.addEventListener("click", async () => {
+                      console.log(set.name)
+                      var dataName = set.name
+                      var dataNum = set.set_num
+                      var dataImg = set.set_img_url
+                      const response = await fetch("/api/collection", {
+                        method: 'POST',
+                        body: JSON.stringify({dataNum, dataImg, dataName}),
+                        headers: { 'Content-Type': 'application/json' },
+                      })
+                      if (response.ok) {
+                        // If successful, redirect the browser to the profile page
+                        document.location.replace('/collection');
+                      } else {
+                        alert(response.statusText);
+                      }
                     });
                     setDiv.appendChild(addToCollectionBtn);
 
