@@ -15,42 +15,27 @@
                 </div>
             </article>
             <article class="collection-table_section">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">List #</th>
+                <table class="table table-striped"> <thead> <tr>
+                            {{!-- <th scope="col">List #</th> --}}
                             <th scope="col">Item #</th>
                             <th scope="col">Image</th>
                             <th scope="col">Set Name</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Availability</th>
+                            {{!-- <th scope="col">Price</th>
+                            <th scope="col">Availability</th> --}}
                         </tr>
                     </thead>
                     <tbody>
+                        {{#each collection}}
                         <tr>
-                            <th scope="row">1</th>
-                            <td>21341</td>
-                            <td><img src="../practice-code/assets/Images/HocusPocusLego.webp" /></td>
-                            <td>Disney Hocus Pocus: The Sanderson Sisters' Cottage</td>
-                            <td>Future Feature</td>
-                            <td>Future Feature</td>
+                            {{!-- <th scope="row">{{collection.length}}</th> --}}
+                            <td>{{set_num}}</td>
+                            <td><img src={{set_img_url}} /></td>
+                            <td>{{name}}</td>
+                            {{!-- <td>${{price}}</td>
+                            <td>{{availability}}</td> --}}
                         </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>75367</td>
-                            <td><img src="../practice-code/assets/Images/SWLego.webp" /></td>
-                            <td>Venator-Class Republic Attack Cruiser</td>
-                            <td>Future Feature</td>
-                            <td>Future Feature</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>76391</td>
-                            <td><img src="../practice-code/assets/Images/HPLego.webp" /></td>
-                            <td>Hogwarts™ Icons - Collectors' Editiond</td>
-                            <td>Future Feature</td>
-                            <td>Future Feature</td>
-                        </tr>
+                        {{/each}}
+
                     </tbody>
                 </table>
             </article>
