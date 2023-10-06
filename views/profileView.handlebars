@@ -1,0 +1,41 @@
+{{!-- TODO: add handlebars to load the content from the database --}}
+<main>
+      <header class="profile-header">
+        <h1>Builder Profile</h1>
+      </header>
+      <section class="profile">
+
+        <div class="profile-image">
+          <img src="images/Lego_Heart.png" alt="Profile Picture" />
+          <input type="file" id="avatar-upload" accept="image/*" />
+          <label for="avatar-upload">Upload Avatar</label>
+        </div>
+        <div class="profile-info">
+          <p>{{info.username}}</p>
+          <p>{{info.email}}</p>
+          <label class="username">Username:</label>
+          <input type="text" id="username" placeholder="Your Username" />
+
+          <label class="email">Email:</label>
+          <input type="text" id="email" />
+
+          <label class="Favorite-sets">Favorite sets:</label>
+          <div class="profile-favorites">
+            <label>
+              <input type="checkbox"/> Star
+              Wars
+            </label>
+            <label>
+              <input type="checkbox"/> Set 2
+            </label>
+            <label>
+              <input type="checkbox"/> Set 3
+            </label>
+            <!-- Add more sets as needed -->
+          </div>
+
+          <button class="submit-button">Save Profile</button>
+        </div>
+      </section>
+    </main>
+    <script src="/js/fetchUsers.js"></script>

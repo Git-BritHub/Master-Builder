@@ -11,7 +11,7 @@ Deployed website: https://master-builder-production-40c9.up.railway.app/
 * [Contributing](#contributing)
 
 ## Description
-`masterBuilder` allows you to find an extensive catalog of LEGO sets and pieces from a wide range of themes, spanning from classic collections to the latest releases. Whether you’re a fan of space adventures, skyscrapers, or historical wonders, you’ll find it all at `masterBuilder`. With `masterBuilder` you can create your profile and show others your collections and amazing creations, as well as your favorite builds. `masterBuilder` is a RESTful API created with Node and Express utilizing MySQL and Sequelize ORM for the database.
+`masterBuilder` allows you to find an extensive catalogue of LEGO sets and pieces from a wide range of themes, spanning from classic collections to the latest releases. Whether you’re a fan of space adventures, skyscrapers, or historical wonders, you’ll find it all at `masterBuilder`. With `masterBuilder` you can create your profile and show others your collections and amazing creations, as well as your favorite builds. `masterBuilder` is a RESTful API created with Node and Express utilizing MySQL and Sequelize ORM for the database.
 
 ## Usage
 * LEGO Catalogue: An account is not required to browse through the various LEGO themes and sets. Select `LEGO Catalogue` towards the top of the page to browse and find your desired LEGO set. By selecting one of the LEGO themes provided, you will be able to browse and add to your collection or wishlist. 
