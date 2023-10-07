@@ -1,9 +1,9 @@
 const sequelize = require('../config/connection');
-const { Labels, Sets, Wishlist, User, Collection } = require('../models');
+const { Labels, Sets, User, Wishlist, Collection } = require('../models');
 
 const labelData = require('./labelData.json');
 const setData = require('./setData.json');
-const wishlistData = require('./wishlistData.json');
+const wishlistData = require('./wishlistSeed.json');
 const userData = require('./userData.json');
 const collectionData = require("./collectionSeed.json")
 
@@ -28,7 +28,7 @@ const seedDatabase = async () => {
   const wishlist = await Wishlist.bulkCreate(wishlistData, {
     individualHooks: true,
     returning: true,
-  });
+  })
 
   const collections = await Collection.bulkCreate(collectionData, {
     individualHooks: true,
@@ -36,6 +36,7 @@ const seedDatabase = async () => {
   })
 
   process.exit(0);
+
 };
 
 seedDatabase();

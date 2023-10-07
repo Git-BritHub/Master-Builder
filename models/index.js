@@ -16,11 +16,12 @@ User.hasOne(Wishlist, {
 
 Collection.belongsTo(User, {
   foreignKey: "user_id",
-  onDelete: 'CASCADE'
+  onDelete: 'CASCADE',
 });
 
 Wishlist.belongsTo(User, {
   foreignKey: 'user_id',
+  onDelete: 'CASCADE',
 });
 
 Sets.belongsTo(User, {
