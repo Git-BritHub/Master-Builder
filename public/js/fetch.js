@@ -97,30 +97,43 @@ const fetchSets = async () => {
                     addToCollectionBtn.classList.add("add-to-collection");
                     addToCollectionBtn.textContent = "Add to Collection";
                     addToCollectionBtn.addEventListener("click", async () => {
-                      console.log(set.name)
-                      var dataName = set.name
-                      var dataNum = set.set_num
-                      var dataImg = set.set_img_url
-                      const response = await fetch("/api/collection", {
-                        method: 'POST',
-                        body: JSON.stringify({dataNum, dataImg, dataName}),
-                        headers: { 'Content-Type': 'application/json' },
-                      })
-                      if (response.ok) {
-                        // If successful, redirect the browser to the profile page
-                        document.location.replace('/collection');
-                      } else {
-                        alert(response.statusText);
-                      }
+                        console.log(set.name)
+                        var dataName = set.name
+                        var dataNum = set.set_num
+                        var dataImg = set.set_img_url
+                        const response = await fetch("/api/collection", {
+                            method: 'POST',
+                            body: JSON.stringify({ dataNum, dataImg, dataName }),
+                            headers: { 'Content-Type': 'application/json' },
+                        })
+                        if (response.ok) {
+                            // If successful, redirect the browser to the collection page
+                            document.location.replace('/collection');
+                        } else {
+                            alert(response.statusText);
+                        }
                     });
                     setDiv.appendChild(addToCollectionBtn);
 
                     const addToWishlistBtn = document.createElement("button");
                     addToWishlistBtn.classList.add("add-to-wishlist");
                     addToWishlistBtn.textContent = "Add to Wishlist";
-                    addToWishlistBtn.addEventListener("click", () => {
-                        // Add set to wishlist logic here
-                        // You can use the set.set_num to identify the set
+                    addToWishlistBtn.addEventListener("click", async () => {
+                        console.log(set.name)
+                        var dataName = set.name
+                        var dataNum = set.set_num
+                        var dataImg = set.set_img_url
+                        const response = await fetch("/api/wishlist", {
+                            method: 'POST',
+                            body: JSON.stringify({ dataNum, dataImg, dataName }),
+                            headers: { 'Content-Type': 'application/json' },
+                        })
+                        if (response.ok) {
+                            // If successful, redirect the browser to the wishlist page
+                            document.location.replace('/wishlist');
+                        } else {
+                            alert(response.statusText);
+                        }
                     });
                     setDiv.appendChild(addToWishlistBtn);
 
