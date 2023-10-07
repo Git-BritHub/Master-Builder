@@ -1,10 +1,14 @@
 [
     {
-        "wish_id": "001",
-        "wish_name": "Test Set Name",
-        "parts": "001",
-        "label_id": "001",
-        "set_id": "001",
-        "user_id": "001"
+        "user_id": "001",
+        "name": "Power Bike",
+        "set_num": "1291-1",
+        "set_img_url": "https://cdn.rebrickable.com/media/sets/1291-1/8634.jpg"
+    },
+    {
+        "user_id": "001",
+        "name": "Dirt Bike",
+        "set_num": "8004-1",
+        "set_img_url": "https://cdn.rebrickable.com/media/sets/8004-1/7306.jpg"
     }
 ]

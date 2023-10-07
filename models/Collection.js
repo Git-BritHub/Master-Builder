@@ -1,8 +1,10 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
+// create our collection model
 class Collection extends Model {}
 
+// fields/columns for collection model
 Collection.init(
   {
     id: {
