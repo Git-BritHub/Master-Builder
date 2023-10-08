@@ -1,61 +1,62 @@
-{{!-- TODO: add collection handlebars once html draft is complete --}}
 <main>
-        <section class="collection-header">
-            <div class="collection-brick">
-                <img src="../practice-code/assets/Images/Lego_brick.png" alt="Lego heart" width="100" height="50" />
+    <section class="collection-header">
+        <div class="collection-brick">
+            <img src="../public/images/Lego_brick.png" alt="Lego heart" width="100" height="50" />
+        </div>
+        <h1 class="collection-title">COLLECTION</h1>
+    </section>
+    <section class="collection-table">
+        <article class="collection-table-hdr">
+            <p>Product Details</p>
+            <div>
+                <input placeholder="Collection Library" />
+                <button class="collection-add_new">+ Add New</button>
             </div>
-            <h1 class="collection-title">COLLECTION</h1>
-        </section>
-        <section class="collection-table">
-            <article class="collection-table-hdr">
-                <p>Product Details</p>
-                <div>
-                    <input placeholder="Collection Library" />
-                    <button class="collection-add_new">+ Add New</button>
-                </div>
-            </article>
-            <article class="collection-table_section">
-                <table class="table table-striped"> <thead> <tr>
-                            {{!-- <th scope="col">List #</th> --}}
-                            <th scope="col">Item #</th>
-                            <th scope="col">Image</th>
-                            <th scope="col">Set Name</th>
-                            {{!-- <th scope="col">Price</th>
-                            <th scope="col">Availability</th> --}}
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {{#each collection}}
-                        <tr>
-                            {{!-- <th scope="row">{{collection.length}}</th> --}}
-                            <td>{{set_num}}</td>
-                            <td><img src={{set_img_url}} /></td>
-                            <td>{{name}}</td>
-                            {{!-- <td>${{price}}</td>
-                            <td>{{availability}}</td> --}}
-                        </tr>
-                        {{/each}}
+        </article>
+        <article class="collection-table_section">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        {{!-- <th scope="col">List #</th> --}}
+                        <th scope="col">Item #</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Set Name</th>
+                        {{!-- <th scope="col">Price</th>
+                        <th scope="col">Availability</th> --}}
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each collection}}
+                    <tr>
+                        {{!-- <th scope="row">{{collection.length}}</th> --}}
+                        <td>{{set_num}}</td>
+                        <td><img src={{set_img_url}} /></td>
+                        <td>{{name}}</td>
+                        {{!-- <td>${{price}}</td>
+                        <td>{{availability}}</td> --}}
+                    </tr>
+                    {{/each}}
 
-                    </tbody>
-                </table>
-            </article>
-            <article>
-                <nav aria-label="Page navigation">
-                    <ul class="pagination justify-content-center">
-                        <li class="page-item">
-                            <a class="page-link">Previous</a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">Next</a>
-                        </li>
-                    </ul>
-                </nav>
-            </article>
-        </section>
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
+                </tbody>
+            </table>
+        </article>
+        <article>
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                        <a class="page-link">Previous</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+            </nav>
+        </article>
+    </section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
