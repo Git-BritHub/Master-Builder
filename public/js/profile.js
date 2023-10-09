@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 profileImage.src = e.target.result;
                 savedProfileData.avatar = e.target.result;
                 localStorage.setItem("profileData", JSON.stringify(savedProfileData));
+                console.log("Avatar updated:", savedProfileData.avatar); // Check if the avatar data is updated
             };
             reader.readAsDataURL(selectedFile);
         }
