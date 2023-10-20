@@ -197,6 +197,11 @@ form .form-content .sign-up-text {
   font-weight: 900;
   color:#FC0404;
 }
+#logout {
+  font-weight: 900;
+  color:#FC0404;
+  background:transparent;
+}
 
 /* Homepage CSS */
 
