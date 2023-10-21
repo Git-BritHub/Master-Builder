@@ -15,14 +15,15 @@
 <body>
   <header>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-
       <div class="container-fluid">
-        <h2 class="wishlist-navbar-brand">
+        <h2 class="logo-navbar-brand">
           <img src="images/Lego_Heart.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-top" />
           masterBuilder
         </h2>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="nav justify-content-end">
+        <ul class="nav justify-content-end">
+          <div class="collapse navbar-collapse" id="navbarNav">
+            {{!-- TODO: Fix and readd user authentication for each page for navbar fix on handlebars pages. Logged_in
+            options are not showing up on some handlebars pages due to pages not recognizing user login --}}
             <!-- Conditionally render links for login or logout, wishlist, collection and profile -->
             {{#if logged_in}}
             <li class="nav-item">
@@ -30,7 +31,6 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/collection">Collection</a>
-            </li>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/catalogue">LEGO Catalogue</a>
@@ -47,8 +47,8 @@
               <a class="nav-link" href="/catalogue">LEGO Catalogue</a>
             </li>
             {{/if}}
-          </ul>
-        </div>
+        </ul>
+      </div>
       </div>
     </nav>
   </header>
@@ -58,7 +58,7 @@
     {{{ body }}}
   </main>
   <footer id="footer">
-    <p>© masterBuilder 2023 | Tim Morgan, Brittany Brimley, Blake Boiteux, Josh Peterson</p>
+    <p>© masterBuilder 2023 | Brittany Brimley, Tim Morgan, Blake Boiteux, Josh Peterson</p>
   </footer>
   </div>
 
