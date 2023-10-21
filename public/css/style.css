@@ -1,7 +1,7 @@
 /* Login Page CSS */
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Montserrat:wght@200;400;900&display=swap');
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -24,7 +24,7 @@
   background: #fff;
   Padding: 40px 30px;
   Margin: 30px auto 0px auto;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   perspective: 2700px;
 }
 
@@ -49,7 +49,7 @@
   z-index: 100;
 }
 
-.container #flip:checked ~ .cover {
+.container #flip:checked~.cover {
   transform: rotateY(-180deg);
 }
 
@@ -76,7 +76,6 @@
 .form-content .login-form,
 .form-content .signup-form {
   width: calc(100% / 2 - 25px);
-  /* background: red; */
 }
 
 form .form-content .title {
@@ -84,10 +83,10 @@ form .form-content .title {
   font-size: 24px;
   font-weight: 900;
   color: #9904fc;
-  }
+}
 
 form .form-content .title:before {
-  content: "";
+  /* content: ""; */
   position: absolute;
   left: 0;
   bottom: 0;
@@ -121,11 +120,10 @@ form .form-content .input-box input {
   padding: 0 30px;
   font-size: 16px;
   font-weight: 500;
-  border-bottom: 2px solid rgba(0,0,0,0.2);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
 }
 
-.form-content .input-box input:focus 
-.form-content .input-box input:valid {
+.form-content .input-box input:focus .form-content .input-box input:valid {
   border-color: #9904fc;
 }
 
@@ -175,36 +173,39 @@ form .form-content label {
 form .form-content label:hover {
   text-decoration: underline;
 }
+
 form .form-content .login-text,
 form .form-content .sign-up-text {
   text-align: center;
   margin-top: 25px;
 }
+
 .container #flip {
   display: none;
 }
 
+
 /* Navbar CSS */
-
-.nav-item {
-  font-weight: 900;
-}
-
 .nav-item .nav-link {
+  font-weight: 900;
   color: #FC0404;
 }
-.wishlist-navbar-brand {
+
+.logo-navbar-brand {
   font-weight: 900;
-  color:#FC0404;
+  color: #FC0404;
 }
+
 #logout {
   font-weight: 900;
-  color:#FC0404;
-  background:transparent;
+  color: #FC0404;
+  background: transparent;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
-/* Homepage CSS */
 
+/* Homepage CSS */
 body {
   background-image: url('../images/home\ back\ ground.jpg');
   background-position: center;
@@ -221,15 +222,12 @@ body {
   transform: translate(-50%, -50%);
   width: 500px;
   height: 285px;
-  /* background-color: #ffffff;
-  color: #fff; */
   text-align: center;
   line-height: 100px;
   margin: 10px;
   /* border: 2px solid #e9e9e9;
   border-radius: 10px; */
 }
-
 
 .box {
   position: absolute;
@@ -295,7 +293,6 @@ body {
   border-radius: 10px;
 }
 
-
 .box h1 {
   text-decoration: solid;
   font-weight: bold;
@@ -306,57 +303,53 @@ body {
   text-decoration: underline;
 }
 
-footer{
-  color:rgb(255, 0, 0);
+footer p {
+  color: rgb(255, 0, 0);
   background-color: white;
-
+  display: inline-block;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
+
 
 /* CSS for the wishlist below */
-
-/* .wishlist-header .wishlist-title {
-  display: flex;
-  justify-content: center;
-  font-weight: 900;
-  font-size: 24px;
-  color: #000;
-}
-.wishlist-header .wishlist-heart {
-  display: flex;
-  justify-content: center;
-  margin-top: 25px;
-} */
 .wishlist-table {
   width: 100%;
 }
+
 .wishlist-table-hdr {
   display: flex;
-  justify-content:right;
+  justify-content: right;
   align-items: center;
   padding: 20px;
   background-color: #f7f7f7;
 }
+
 .wishlist-table-hdr p {
   font-weight: 900;
   font-size: 18px;
   color: #000;
 }
+
 button {
   outline: none;
   border: none;
   border-radius: 6px;
   cursor: pointer;
 }
+
 .wishlist-add_new {
   padding: 10px 20px;
   color: #fff;
   background-color: #FC0404;
 }
+
 .wishlist-add_new:hover {
   padding: 10px 20px;
   color: #fff;
   background-color: #740000;
 }
+
 input {
   padding: 10px 20px;
   margin: 0 10px;
@@ -364,33 +357,39 @@ input {
   border: 1px solid #FC0404;
   border-radius: 6px;
 }
-.wishlist-table_section{
+
+.wishlist-table_section {
   height: 650px;
   overflow: auto;
 }
+
 table {
   width: 100%;
-  table-layout:fixed;
+  table-layout: fixed;
 }
+
 td img {
   height: 125px;
   width: 125px;
 }
+
 .page-item .page-link {
-  color:#FC0404;
+  color: #FC0404;
   font-weight: 400;
 }
+
 .page-item .page-link:hover {
   font-weight: 400;
-  background-color:#FC0404;
+  background-color: #FC0404;
   color: #fff
 }
-::placeholder{
+
+::placeholder {
   color: #000;
 }
 
-/* CSS for the Profile */
 
+/* CSS for the Profile */
 .profile-header {
   background-color: #FC0404;
   color: #fff;
@@ -418,7 +417,7 @@ td img {
   display: flex;
   width: 200px;
   height: 200px;
-  text-align:center;
+  text-align: center;
   justify-content: center;
   position: relative;
 }
@@ -485,6 +484,7 @@ textarea {
 textarea {
   resize: vertical;
 }
+
 .submit-button {
   background-color: #FC0404;
   color: #fff;
@@ -502,24 +502,12 @@ textarea {
   background-color: #b90606;
 }
 
-/* CSS for the Collection */
 
-/* .collection-header .collection-title {
-  display: flex;
-  justify-content: center;
-  font-weight: 900;
-  font-size: 24px;
-  color: #000;
-}
-.collection-header .collection-brick {
-  display: flex;
-  justify-content: center;
-  margin-top: 25px;
-  margin-bottom: 15px;
-} */
+/* CSS for the Collection */
 .collection-table {
   width: 100%;
 }
+
 .collection-table-hdr {
   display: flex;
   justify-content: right;
@@ -527,27 +515,32 @@ textarea {
   padding: 20px;
   background-color: #f7f7f7;
 }
+
 .collection-table-hdr p {
   font-weight: 900;
   font-size: 18px;
   color: #000;
 }
+
 button {
   outline: none;
   border: none;
   border-radius: 6px;
   cursor: pointer;
 }
+
 .collection-add_new {
   padding: 10px 20px;
   color: #fff;
   background-color: #FC0404;
 }
+
 .collection-add_new:hover {
   padding: 10px 20px;
   color: #fff;
   background-color: #740000;
 }
+
 input {
   padding: 10px 20px;
   margin: 0 10px;
@@ -555,28 +548,34 @@ input {
   border: 1px solid #FC0404;
   border-radius: 6px;
 }
-.collection-table_section{
+
+.collection-table_section {
   height: 650px;
   overflow: auto;
 }
+
 table {
   width: 100%;
-  table-layout:fixed;
+  table-layout: fixed;
 }
+
 td img {
   height: 125px;
   width: 125px;
 }
+
 .page-item .page-link {
-  color:#FC0404;
+  color: #FC0404;
   font-weight: 400;
 }
+
 .page-item .page-link:hover {
   font-weight: 400;
-  background-color:#FC0404;
+  background-color: #FC0404;
   color: #fff
 }
-::placeholder{
+
+::placeholder {
   color: #000;
 }
 
@@ -597,16 +596,18 @@ footer {
   font-size: 0.8em;
   bottom: 0;
 }
+
 footer ul {
   list-style-type: none;
 }
+
 footer ul li {
   display: inline;
   margin: 0 15px;
 }
 
-/* Catalog CSS */
 
+/* Catalog CSS */
 .catalog-header {
   background-color: #FC0404;
   color: white;
@@ -660,7 +661,8 @@ footer ul li {
 }
 
 .set {
-  width: calc(33.33% - 20px); /* Set the width for each set with spacing */
+  /* Set the width for each set with spacing */
+  width: calc(33.33% - 20px);
   margin: 10px;
   padding: 10px;
   border: 1px solid #ccc;
@@ -670,8 +672,10 @@ footer ul li {
 }
 
 .set img {
-  max-width: 100%; /* Ensure all images are the same width */
-  height: auto; /* Maintain aspect ratio */
+  /* Ensure all images are the same width */
+  max-width: 100%;
+  /* Maintain aspect ratio */
+  height: auto;
 }
 
 .add-to-collection,
