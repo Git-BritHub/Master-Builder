@@ -313,7 +313,8 @@ footer{
 }
 
 /* CSS for the wishlist below */
-.wishlist-header .wishlist-title {
+
+/* .wishlist-header .wishlist-title {
   display: flex;
   justify-content: center;
   font-weight: 900;
@@ -324,13 +325,13 @@ footer{
   display: flex;
   justify-content: center;
   margin-top: 25px;
-}
+} */
 .wishlist-table {
   width: 100%;
 }
 .wishlist-table-hdr {
   display: flex;
-  justify-content: space-between;
+  justify-content:right;
   align-items: center;
   padding: 20px;
   background-color: #f7f7f7;
