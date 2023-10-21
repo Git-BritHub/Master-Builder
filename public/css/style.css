@@ -504,7 +504,7 @@ textarea {
 
 /* CSS for the Collection */
 
-.collection-header .collection-title {
+/* .collection-header .collection-title {
   display: flex;
   justify-content: center;
   font-weight: 900;
@@ -516,13 +516,13 @@ textarea {
   justify-content: center;
   margin-top: 25px;
   margin-bottom: 15px;
-}
+} */
 .collection-table {
   width: 100%;
 }
 .collection-table-hdr {
   display: flex;
-  justify-content: space-between;
+  justify-content: right;
   align-items: center;
   padding: 20px;
   background-color: #f7f7f7;
