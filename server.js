@@ -1,9 +1,8 @@
-require("dotenv").config();
+require('dotenv').config();
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
-// const routes = require('./controllers');
 const helpers = require('./utils/helpers');
 
 const sequelize = require('./config/connection');
@@ -12,17 +11,9 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Set up Handlebars.js engine with customer helpers
-
-
 const sess = {
   secret: process.env.SECRET,
-  cookie: {
-    maxAge: 300000,
-    httpOnly: true,
-    secure: false,
-    sameSite: 'strict',
-  },
+  cookie: {},
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
@@ -38,16 +29,13 @@ app.engine('handlebars', hbs.engine);
 
 // Directs Railway to the handlebars files
 app.set('view engine', 'handlebars');
-// app.set('views', './views');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static("images"));
 
-
 // turn on routes
-// app.use(routes);
 app.use(require("./controllers/"));
 
 // turn on connection to db and server
