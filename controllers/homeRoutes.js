@@ -1,7 +1,7 @@
 const router = require('express').Router();
+const withAuth = require("../utils/auth");
 // TODO: 'Collection' in place of project
 const { User, Collection, Wishlist } = require('../models');
-const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
   try {
@@ -43,12 +43,19 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-router.get('/catalogue', (req, res) => {
-  res.render('catalogue');
+router.get('/catalogue', withAuth, (req, res) => {
+  let log = false
+  if (req.session.logged_in) {
+    log = true
+  }
+  res.render('catalogue', {
+    logged_in: log
+  });
+  
 });
 
 // UPDATE THIS TO SHOW EACH USERS COLLECTION INSTEAD OF ALL COLLECTIONS
-router.get('/collection', async (req, res) => {
+router.get('/collection', withAuth, async (req, res) => {
   try {
     const collectionData = await Collection.findAll({
       include: [
@@ -60,9 +67,14 @@ router.get('/collection', async (req, res) => {
     });
 
     const collection = collectionData.map((collection) => collection.get({ plain: true }));
+    let log = false
+    if (req.session.logged_in) {
+      log = true
+    }
 
     res.render('collection', {
-      collection
+      collection,
+      logged_in: log,
     });
   } catch (err) {
     console.log(err)
@@ -70,7 +82,7 @@ router.get('/collection', async (req, res) => {
   }
 });
 
-router.get('/wishlist', async (req, res) => {
+router.get('/wishlist', withAuth, async (req, res) => {
   try {
     const wishlistData = await Wishlist.findAll({
       include: [
@@ -82,9 +94,20 @@ router.get('/wishlist', async (req, res) => {
     });
 
     const wishlist = wishlistData.map((wishlist) => wishlist.get({ plain: true }));
-
+    let log = false
+    if (req.session.logged_in) {
+      log = true
+    }
+    //   const userData = await User.findOne({
+    //     where: {
+    //         userId: req.session.userId,
+    //     }
+    // })
+    // console.log(userData, "TEST MESSAGE")
+    // const info = userData.map((user) => user.get({ plain: true }))
     res.render('wishlist', {
-      wishlist
+      wishlist,
+      logged_in: log
     });
   } catch (err) {
     console.log(err)
