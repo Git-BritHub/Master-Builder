@@ -30,9 +30,9 @@ masterBuilder allows you to find an extensive catalogue of LEGO sets and pieces 
 [![License: MIT](https://img.shields.io/badge/License-MIT-aqua.svg)](https://opensource.org/licenses/MIT)
 
 ## Contributing
-* Brittany Brimley https://github.com/Git-BritHub
-* Tim Morgan https://github.com/tmorgan-dev
-* Blake Boiteux https://github.com/Bwainuna
-* Josh Peterson https://github.com/joshcode1
-* masterBuilder Figma Project https://www.figma.com/file/daD9o
+* [Brittany Brimley](https://github.com/Git-BritHub)
+* [Tim Morgan](https://github.com/tmorgan-dev)
+* [Blake Boiteux](https://github.com/Bwainuna)
+* [Josh Peterson](https://github.com/joshcode1)
+* masterBuilder Figma Project: https://www.figma.com/file/daD9o
 * Web API used: https://rebrickable.com/api/
